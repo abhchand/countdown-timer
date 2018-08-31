@@ -49,9 +49,9 @@ class CountdownEvent extends React.Component {
   }
 
   fontSize() {
-    let fontSize = 40 - (10 * this.props.id);
+    let fontSize = 50 - (15 * this.props.id);
 
-    if (fontSize < 20) { fontSize = 20; }
+    if (fontSize < 16) { fontSize = 16; }
 
     return fontSize;
   }
