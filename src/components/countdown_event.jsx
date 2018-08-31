@@ -31,7 +31,14 @@ class CountdownEvent extends React.Component {
 
     let seconds = remainder;
 
-    return days + " days " + hours + "h " + minutes + "m " + seconds + "s";
+    return (
+      <span className="event-timer">
+        <span className="remaining-days">{days}</span> days&nbsp;
+        <span className="remaining-hours">{hours}</span> h&nbsp;
+        <span className="remaining-minutes">{minutes}</span> m&nbsp;
+        <span className="remaining-seconds">{seconds}</span> s
+      </span>
+    );
   }
 
   displayDate() {
