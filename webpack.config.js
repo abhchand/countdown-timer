@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 var BUILD_DIR = path.resolve(__dirname, 'lib');
 var APP_DIR = path.resolve(__dirname, 'src');
@@ -35,7 +36,14 @@ var config = {
     }),
     new webpack.DefinePlugin({
       'process.env.COUNTDOWN_EVENTS': JSON.stringify(process.env.COUNTDOWN_EVENTS)
-    })
+    }),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      context: 'src',
+      files: '**/*.css',
+      failOnError: false,
+      quiet: false,
+    }),
   ],
 };
 
