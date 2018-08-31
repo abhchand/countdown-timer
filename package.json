@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/webpack-cli --mode development",
-    "build": "node_modules/.bin/webpack-cli --mode production",
+    "prod": "node_modules/.bin/webpack-cli --mode production",
     "start": "node_modules/.bin/webpack-dev-server --mode development"
   },
   "author": "",
