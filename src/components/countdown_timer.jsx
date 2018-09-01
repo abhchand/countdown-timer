@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import CountdownEvent from './countdown_event.jsx';
+import CountdownEventError from './countdown_event_error.jsx';
 
 class CountdownTimer extends React.Component {
   constructor() {
@@ -15,7 +16,16 @@ class CountdownTimer extends React.Component {
     //   { secsUntil: null, month: 4,  date: 12, name: "Bday" },
     //   ...
     // ]
-    let events = JSON.parse(process.env.COUNTDOWN_EVENTS)
+    let events;
+
+    try {
+      events = JSON.parse(process.env.COUNTDOWN_EVENTS)
+    } catch (e) {
+      this.state = {
+        hasError: true
+      };
+      return;
+    }
 
     let now = new Date();
     let currentMonth = now.getMonth() + 1;
@@ -51,11 +61,13 @@ class CountdownTimer extends React.Component {
 
     // Set State
     this.state = {
+      hasError: false,
       events: events
     };
 
     // Bind functions
     this.countDown = this.countDown.bind(this);
+    this.renderCountdownEvents = this.renderCountdownEvents.bind(this);
 
     // Start timer
     this.timer = setInterval(this.countDown, 1000);
@@ -76,7 +88,7 @@ class CountdownTimer extends React.Component {
     });
   }
 
-  render() {
+  renderCountdownEvents() {
     let events = this.state.events;
 
     return(
@@ -88,6 +100,14 @@ class CountdownTimer extends React.Component {
         }
       </div>
     );
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <CountdownEventError />;
+    }
+
+    return this.renderCountdownEvents();
   }
 }
 
