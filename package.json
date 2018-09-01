@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node_modules/.bin/webpack-cli --mode development",
     "prod": "node_modules/.bin/webpack-cli --mode production",
-    "start": "node_modules/.bin/webpack-dev-server --mode development"
+    "start": "node_modules/.bin/webpack-dev-server --hot --mode development"
   },
   "author": "",
   "repository": {
