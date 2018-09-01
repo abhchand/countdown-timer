@@ -78,7 +78,6 @@ class CountdownTimer extends React.Component {
 
   render() {
     let events = this.state.events;
-    let self = this;
 
     return(
       <div>

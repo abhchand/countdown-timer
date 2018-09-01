@@ -70,6 +70,6 @@ class CountdownEvent extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default CountdownEvent;
