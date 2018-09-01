@@ -1,8 +1,12 @@
+// Disable until TODO below is fixed
+// eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
 import React from 'react';
 
+// Disable until TODO below is fixed
+/* eslint-disable react/prop-types */
 class CountdownEvent extends React.Component {
-  // Error in setting propTypes?
+  // TODO: Error in setting propTypes?
   // See: https://github.com/babel/babel-eslint/issues/312#issuecomment-317688758
   // static propTypes = {
   //   id: PropTypes.number.isRequired,
@@ -73,3 +77,4 @@ class CountdownEvent extends React.Component {
 }
 
 export default CountdownEvent;
+/* eslint-enable react/prop-types */
