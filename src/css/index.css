@@ -1,9 +1,10 @@
 .countdown-event {
   margin: 70px 0;
   font-family: Verdana,sans-serif;
-  line-height: 55px;
+  line-height: 1.4;
   text-align: center;
 }
+
 .event-timer .remaining-days,
 .event-timer .remaining-hours,
 .event-timer .remaining-minutes,
@@ -26,8 +27,11 @@
 }
 .event-date {
   font-size: 16px;
-  line-height: 30px;
+  line-height: 2;
 }
+
+
+
 .error {
   margin-top: 100px;
   color: #D8000C;
