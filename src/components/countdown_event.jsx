@@ -17,7 +17,6 @@ class CountdownEvent extends React.Component {
     super(props);
 
     this.timeRemaining = this.timeRemaining.bind(this);
-    this.fontSize = this.fontSize.bind(this);
   }
 
   timeRemaining() {
@@ -52,25 +51,13 @@ class CountdownEvent extends React.Component {
     return eventDate.toDateString();
   }
 
-  fontSize() {
-    let fontSize = 50 - (15 * this.props.id);
-
-    if (fontSize < 16) { fontSize = 16; }
-
-    return fontSize;
-  }
-
   render() {
     return (
-      <div
-        id={"event-" + this.props.event.id}
-        className="countdown-event"
-        style={ {fontSize: this.fontSize() + 'px'} }>
-
-      <span>{this.timeRemaining()}</span> until&nbsp;
-      <span className="event-name">{this.props.event.name}</span>
-      <br />
-      <span className="event-date">({this.displayDate()})</span>
+      <div id={"event-" + this.props.id} className="countdown-event">
+        <span>{this.timeRemaining()}</span> until&nbsp;
+        <span className="event-name">{this.props.event.name}</span>
+        <br />
+        <span className="event-date">({this.displayDate()})</span>
       </div>
     );
   }
