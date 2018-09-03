@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-var BUILD_DIR = path.resolve(__dirname, 'lib');
+var BUILD_DIR = path.resolve(__dirname, 'build');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
