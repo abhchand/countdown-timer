@@ -8,6 +8,18 @@ A simple countdown timer to important events!
 
 Define events to countdown to as an environment variable
 
+Install
+
+- Install `yarn`
+- Install `node.js`
+- Install `npm`
+
+```
+yarn install
+```
+
+Build
+
 ```
 export COUNTDOWN_EVENTS="[
   {\"month\":9,\"date\":18,\"name\":\"Anniversary\"},
@@ -15,11 +27,7 @@ export COUNTDOWN_EVENTS="[
   {\"month\":2,\"date\":14,\"name\":\"Valentine's Day\"},
   {\"month\":12,\"date\":25,\"name\":\"X-mas\"}
 ]"
-```
 
-Build
-
-```
 npm run prod
 ```
 
